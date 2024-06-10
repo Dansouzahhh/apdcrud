@@ -1,0 +1,16 @@
+<?php
+include_once 'db_connect.php';
+include_once 'function.php';
+
+if (isset($_POST['email'], $_POST['p'])) {
+    $email = $_POST['email'];
+    $password = $_POST['p'];
+
+    if (login($email, $password, $mysqli) == true) {
+    header('Location: ../protected_page.php');
+   } else {
+    header('Location: ../index.php?error=1');
+    }
+    } else {
+  }
+?>
